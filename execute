@@ -1,0 +1,166 @@
+
+
+local ScreenGui = Instance.new("ScreenGui")
+local logingui = Instance.new("Frame")
+local User = Instance.new("TextBox")
+local Pass = Instance.new("TextBox")
+local Submit = Instance.new("TextButton")
+local Death = Instance.new("TextLabel")
+local opengui = Instance.new("Frame")
+local Open = Instance.new("TextButton")
+local maingui = Instance.new("Frame")
+local Hub = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local Commands = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+logingui.Name = "logingui"
+logingui.Parent = ScreenGui
+logingui.BackgroundColor3 = Color3.fromRGB(197, 95, 88)
+logingui.BackgroundTransparency = 0.100
+logingui.BorderColor3 = Color3.fromRGB(170, 71, 169)
+logingui.BorderSizePixel = 5
+logingui.Position = UDim2.new(0.278761208, 0, 0.627030015, 0)
+logingui.Size = UDim2.new(0, 437, 0, 247)
+logingui.Active = true
+logingui.Draggable = true
+
+User.Name = "User"
+User.Parent = logingui
+User.BackgroundColor3 = Color3.fromRGB(169, 173, 255)
+User.BackgroundTransparency = 0.300
+User.BorderColor3 = Color3.fromRGB(184, 74, 182)
+User.Position = UDim2.new(0.267202228, 0, 0.231611535, 0)
+User.Size = UDim2.new(0, 200, 0, 50)
+User.Font = Enum.Font.Cartoon
+User.Text = "Username"
+User.TextColor3 = Color3.fromRGB(26, 194, 17)
+User.TextScaled = true
+User.TextSize = 14.000
+User.TextWrapped = true
+
+Pass.Name = "Pass"
+Pass.Parent = logingui
+Pass.BackgroundColor3 = Color3.fromRGB(169, 173, 255)
+Pass.BorderColor3 = Color3.fromRGB(184, 74, 182)
+Pass.Position = UDim2.new(0.264913887, 0, 0.505158246, 0)
+Pass.Size = UDim2.new(0, 200, 0, 50)
+Pass.Font = Enum.Font.Cartoon
+Pass.Text = "Password"
+Pass.TextColor3 = Color3.fromRGB(26, 194, 17)
+Pass.TextScaled = true
+Pass.TextSize = 14.000
+Pass.TextWrapped = true
+
+Submit.Name = "Submit"
+Submit.Parent = logingui
+Submit.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
+Submit.BorderSizePixel = 0
+Submit.Position = UDim2.new(0.266353786, 0, 0.764330268, 0)
+Submit.Size = UDim2.new(0, 200, 0, 50)
+Submit.Font = Enum.Font.Gotham
+Submit.Text = "Submit"
+Submit.TextColor3 = Color3.fromRGB(255, 234, 155)
+Submit.TextScaled = true
+Submit.TextSize = 14.000
+Submit.TextWrapped = true
+Submit.MouseButton1Down:connect(function()
+if User.Text == "DeathHub" and Pass.Text == "HorizonDeath" then
+	logingui.Visible = false
+	opengui.Visible = true
+end
+end)
+
+Death.Name = "Death"
+Death.Parent = logingui
+Death.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Death.BackgroundTransparency = 1.000
+Death.BorderSizePixel = 0
+Death.Position = UDim2.new(0.00100086443, 0, -0.0121457493, 0)
+Death.Size = UDim2.new(0, 431, 0, 47)
+Death.ZIndex = 2
+Death.Font = Enum.Font.SourceSans
+Death.Text = "Entering DeathHub...."
+Death.TextColor3 = Color3.fromRGB(144, 13, 13)
+Death.TextScaled = true
+Death.TextSize = 14.000
+Death.TextWrapped = true
+
+opengui.Name = "opengui"
+opengui.Parent = ScreenGui
+opengui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+opengui.Position = UDim2.new(0.013157865, 0, 0.521683633, 0)
+opengui.Size = UDim2.new(0, 159, 0, 42)
+opengui.Visible = false
+
+Open.Name = "Open"
+Open.Parent = opengui
+Open.BackgroundColor3 = Color3.fromRGB(103, 0, 0)
+Open.Size = UDim2.new(0, 169, 0, 42)
+Open.Font = Enum.Font.Code
+Open.Text = "Open DeathHub"
+Open.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open.TextScaled = true
+Open.TextSize = 14.000
+Open.TextWrapped = true
+Open.MouseButton1Down:connect(function()
+maingui.Visible = true
+opengui.Visible = false
+end)
+
+maingui.Name = "maingui"
+maingui.Parent = ScreenGui
+maingui.BackgroundColor3 = Color3.fromRGB(86, 0, 0)
+maingui.Position = UDim2.new(0.263316572, 0, 0.266581655, 0)
+maingui.Size = UDim2.new(0, 470, 0, 223)
+maingui.Visible = false
+maingui.Active = true
+maingui.Draggable = true
+
+Hub.Name = "Hub"
+Hub.Parent = maingui
+Hub.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Hub.BackgroundTransparency = 1.000
+Hub.Size = UDim2.new(0, 470, 0, 50)
+Hub.Font = Enum.Font.Bodoni
+Hub.Text = "DeathHub"
+Hub.TextColor3 = Color3.fromRGB(170, 0, 0)
+Hub.TextScaled = true
+Hub.TextSize = 14.000
+Hub.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = maingui
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(0.873931468, 0, 0.0313901342, 0)
+Close.Size = UDim2.new(0, 59, 0, 35)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+Close.MouseButton1Down:connect(function()
+	maingui.Visible = false
+	opengui.Visible = true
+end)
+
+Commands.Name = "Commands"
+Commands.Parent = maingui
+Commands.BackgroundColor3 = Color3.fromRGB(56, 1, 1)
+Commands.Position = UDim2.new(0.285106391, 0, 0.618834078, 0)
+Commands.Size = UDim2.new(0, 200, 0, 50)
+Commands.Font = Enum.Font.SourceSans
+Commands.Text = "Commands"
+Commands.TextColor3 = Color3.fromRGB(136, 0, 0)
+Commands.TextScaled = true
+Commands.TextSize = 14.000
+Commands.TextWrapped = true
+Commands.MouseButton1Down:connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
